@@ -80,7 +80,10 @@ export default function Footer() {
           <p role="note" className="font-body text-xs text-text-muted text-center max-w-prose mx-auto leading-relaxed">
             <strong className="font-heading text-text">Medical Disclaimer:</strong> This website is for informational purposes only and does not constitute medical advice. Please consult your doctor for diagnosis and treatment.
           </p>
-          <p className="font-body text-xs text-text-muted text-center">© {year} {clinic.name}. All rights reserved.</p>
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <p className="font-body text-xs text-text-muted">© {year} {clinic.name}. All rights reserved.</p>
+            <p className="font-body text-xs text-text-muted">Developed by <span className="font-semibold text-primary"> <b>Er. AARAV HARIT</b></span></p>
+          </div>
         </div>
       </div>
     </footer>
