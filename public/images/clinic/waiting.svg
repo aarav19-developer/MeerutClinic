@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Waiting area placeholder">
+  <rect width="400" height="280" rx="12" fill="#dff0fb"/>
+  <rect x="20" y="150" width="80" height="50" rx="8" fill="#ffffff" stroke="#4a9eca" strokeWidth="2"/>
+  <rect x="120" y="140" width="80" height="60" rx="8" fill="#ffffff" stroke="#4a9eca" strokeWidth="2"/>
+  <rect x="220" y="150" width="80" height="50" rx="8" fill="#ffffff" stroke="#4a9eca" strokeWidth="2"/>
+  <rect x="320" y="145" width="60" height="55" rx="8" fill="#ffffff" stroke="#4a9eca" strokeWidth="2"/>
+  <text x="200" y="260" text-anchor="middle" fill="#4a6b6b" font-size="13" font-family="sans-serif">[WAITING AREA PHOTO]</text>
+</svg>

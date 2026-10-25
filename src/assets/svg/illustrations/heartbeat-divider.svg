@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <path
+    class="heartbeat-line"
+    d="M0 30 L120 30 L150 30 L165 10 L180 50 L195 5 L210 55 L225 15 L240 30 L260 30 L380 30 L410 30 L425 10 L440 50 L455 5 L470 55 L485 15 L500 30 L520 30 L640 30 L670 30 L685 10 L700 50 L715 5 L730 55 L745 15 L760 30 L800 30"
+    fill="none"
+    stroke="#2d8c8c"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.35"
+    stroke-dasharray="900"
+    stroke-dashoffset="900"
+  />
+</svg>

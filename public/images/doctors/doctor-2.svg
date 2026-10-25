@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Doctor 2 photo placeholder">
+  <rect width="200" height="200" rx="12" fill="#fef3e8"/>
+  <circle cx="100" cy="75" r="35" fill="#f5d0a0"/>
+  <ellipse cx="100" cy="170" rx="55" ry="45" fill="#f5d0a0"/>
+  <text x="100" y="130" text-anchor="middle" fill="#7a4a20" font-size="11" font-family="sans-serif">[DOCTOR PHOTO]</text>
+</svg>

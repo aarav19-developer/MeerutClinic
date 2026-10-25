@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" role="img" aria-label="Doctor consulting with a child patient illustration">
+  <!-- Background circle -->
+  <circle cx="240" cy="200" r="180" fill="#e0f5f5" opacity="0.5"/>
+
+  <!-- Doctor body -->
+  <ellipse cx="200" cy="320" rx="45" ry="60" fill="#ffffff" stroke="#2d8c8c" stroke-width="2"/>
+  <!-- Doctor white coat -->
+  <path d="M160 290 Q155 350 165 380 L235 380 Q245 350 240 290 Z" fill="#f5f9f8" stroke="#d0e8e8" stroke-width="1.5"/>
+  <!-- Doctor head -->
+  <circle cx="200" cy="210" r="38" fill="#fde8d8"/>
+  <!-- Doctor hair -->
+  <path d="M165 205 Q170 175 200 172 Q230 175 235 205" fill="#4a6b6b"/>
+  <!-- Doctor face - smile -->
+  <path d="M190 220 Q200 228 210 220" fill="none" stroke="#1e3a3a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Doctor eyes -->
+  <circle cx="191" cy="210" r="3" fill="#1e3a3a"/>
+  <circle cx="209" cy="210" r="3" fill="#1e3a3a"/>
+  <!-- Doctor stethoscope -->
+  <path d="M185 250 Q175 270 180 285 Q185 295 195 295 Q210 295 215 285 Q220 270 210 250" fill="none" stroke="#2d8c8c" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="197" cy="297" r="6" fill="#2d8c8c"/>
+  <!-- Doctor arm extended -->
+  <path d="M240 275 Q265 265 275 255" fill="none" stroke="#fde8d8" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Child body -->
+  <ellipse cx="310" cy="330" rx="32" ry="45" fill="#fff8f0" stroke="#f5a96a" stroke-width="2"/>
+  <!-- Child shirt -->
+  <path d="M280 305 Q278 355 285 375 L335 375 Q342 355 340 305 Z" fill="#fef3e8" stroke="#f5a96a" stroke-width="1.5"/>
+  <!-- Child head -->
+  <circle cx="310" cy="240" r="32" fill="#fde8d8"/>
+  <!-- Child hair -->
+  <path d="M282 235 Q285 210 310 208 Q335 210 338 235" fill="#c0842a"/>
+  <!-- Child eyes -->
+  <circle cx="302" cy="237" r="3.5" fill="#1e3a3a"/>
+  <circle cx="318" cy="237" r="3.5" fill="#1e3a3a"/>
+  <!-- Child smile big -->
+  <path d="M300 250 Q310 260 320 250" fill="none" stroke="#1e3a3a" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Child cheeks -->
+  <circle cx="296" cy="248" r="5" fill="#f5a96a" opacity="0.4"/>
+  <circle cx="324" cy="248" r="5" fill="#f5a96a" opacity="0.4"/>
+
+  <!-- Medical cross on wall -->
+  <rect x="380" y="80" width="12" height="36" rx="3" fill="#2d8c8c" opacity="0.5"/>
+  <rect x="368" y="92" width="36" height="12" rx="3" fill="#2d8c8c" opacity="0.5"/>
+
+  <!-- Decorative dots -->
+  <circle cx="80" cy="100" r="8" fill="#4a9eca" opacity="0.3"/>
+  <circle cx="60" cy="130" r="5" fill="#2d8c8c" opacity="0.2"/>
+  <circle cx="420" cy="300" r="10" fill="#f5a96a" opacity="0.3"/>
+  <circle cx="440" cy="270" r="6" fill="#4a9eca" opacity="0.2"/>
+
+  <!-- Ground line -->
+  <ellipse cx="255" cy="382" rx="100" ry="8" fill="#d0e8e8" opacity="0.5"/>
+</svg>
