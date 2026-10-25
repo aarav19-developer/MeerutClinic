@@ -1,216 +1,86 @@
-# Medical Clinic Website
+# Dr. Pradeep Adhana - Clinic Website
 
-A production-ready, single-page website for a medical clinic with a General Physician and a Child Specialist (Pediatrician). Built with Vite 5 + React 18 + TypeScript 5 + Tailwind CSS v3.
+A single-page website for Dr. Pradeep Adhana’s medical clinic. The doctor handles both General Physician and Child Specialist (Pediatrician) consultations. Patients can learn about services, check clinic timings, and book appointments directly via WhatsApp.
 
----
-
-## Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview the production build
-npm run preview
-```
-
-Open your browser at `http://localhost:5173`.
+Live URL: [meerutclinic.vercel.app]
 
 ---
 
-## Editing Clinic Content
+## What this project is
 
-**All clinic content lives in one file:**
-
-```
-src/data/clinic.ts
-```
-
-Open that file and replace every `[PLACEHOLDER]` value:
-
-| Placeholder | What to put |
-|-------------|-------------|
-| `[CLINIC NAME]` | Your clinic's full name |
-| `[TAGLINE]` | A short one-line tagline |
-| `[SHORT NAME]` | Abbreviated name for the header logo |
-| `[FULL ADDRESS…]` | Full postal address |
-| `[LINK]` in `mapsLink` | Google Maps URL for your location |
-| `[PHONE NUMBER]` | Main phone number (include country code) |
-| `919876543210` in `whatsapp` | WhatsApp number — digits only, no `+` or spaces |
-| `[EMAIL ADDRESS]` | Contact email |
-| `[EMERGENCY NUMBER]` | Emergency phone number |
-| Doctor name, qualifications, experience | Replace in the `doctors` array |
-| `testimonials` array | Replace sample reviews with real ones (with patient consent) |
-
-After editing, run `npm run build` to confirm no TypeScript errors.
+Fully static front-end. No backend, no database. Everything runs in the browser. Appointment booking works by pre-filling a WhatsApp message and opening it in the app — no server needed.
 
 ---
 
-## Adding / Replacing Doctor Photos
+## Stack
 
-1. Prepare a square image (recommended: 400×400 px), JPEG or PNG.
-2. Name it `doctor-1.jpg` (for the General Physician) or `doctor-2.jpg` (for the Pediatrician).
-3. Drop it into `public/images/doctors/`.
-4. Update `avatarSrc` in `src/data/clinic.ts`:
-   ```ts
-   avatarSrc: '/images/doctors/doctor-1.jpg',
-   ```
-
-The SVG placeholder files in that folder can be deleted once real photos are in place.
+- Vite 5 + React 18 + TypeScript
+- Tailwind CSS v3 with custom design tokens
+- Playfair Display (headings) and Inter (body) — Google Fonts
+- vite-plugin-svgr for SVG illustrations as React components
+- SVGO for SVG optimisation
 
 ---
 
-## Adding Icons
+## Page Sections
 
-All icons are defined in `src/assets/svg/sprite.svg` as `<symbol>` elements.
+All content is on one scrollable page:
 
-To add a new icon:
-
-1. Open `src/assets/svg/sprite.svg`.
-2. Add a new `<symbol>` inside `<defs>`:
-   ```xml
-   <symbol id="icon-my-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-     <!-- SVG paths here -->
-   </symbol>
-   ```
-3. Use it in any component:
-   ```tsx
-   <Icon id="my-icon" size={24} aria-hidden="true" />
-   ```
+- Animated intro screen (doctor cartoon + Welcome animation)
+- Hero with two CTAs and trust badges
+- Services — General Physician and Pediatrician
+- Doctor profile with photo slots and clinic gallery
+- Child Care highlight (vaccines, growth, nutrition)
+- Why Choose Us
+- Clinic Timings with live Open / Closed badge
+- Patient Testimonials
+- Book Appointment + FAQ accordion (side by side)
+- Contact and Google Map
+- Footer with medical disclaimer
 
 ---
 
-## Optimising SVG Assets
+## Getting Started
 
-Run SVGO to compress all SVG files:
+Install dependencies:
 
-```bash
-npm run optimize:svg
-```
+    npm install
 
-This processes `src/assets/svg/` and `public/images/` recursively. Safe to run before every production build.
+Start the local server:
 
----
+    npm run dev
 
-## Embedding the Real Google Map
+Build for production:
 
-1. Go to [Google Maps](https://maps.google.com), search your clinic address.
-2. Click **Share → Embed a map → Copy HTML**.
-3. Copy the `src="https://www.google.com/maps/embed?pb=..."` URL.
-4. Open `src/components/Contact.tsx` and replace the `src` prop on the `<iframe>`:
-   ```tsx
-   src="https://www.google.com/maps/embed?pb=YOUR_EMBED_ID"
-   ```
+    npm run build
+
+Preview the build before deploying:
+
+    npm run preview
 
 ---
 
-## Updating SEO Meta Tags
+## Deployment
 
-Edit `index.html` directly — replace all `[PLACEHOLDER]` values in the `<head>`:
-
-- `<title>` — clinic name + city
-- `<meta name="description">` — 150–160 character description
-- `og:url`, `og:image`, `twitter:image` — your domain and OG image
-- `link rel="canonical"` — your canonical URL
-
-Create an `og-image.png` (1200×630 px) and place it in `public/` for social share previews.
+Vercel is the easiest — connect the repo, it auto-detects Vite and handles everything.
 
 ---
 
-## Deploying
+## Challenges
 
-### Vercel
+**Single doctor, two specialties**
+The original data model assumed two doctors. Restructured clinic.ts so one doctor entry carries both GP and Pediatrician focus areas without duplicating the services section.
 
-```bash
-npx vercel --prod
-```
+**WhatsApp booking without a backend**
+The form needed to feel like a real booking flow even though it just opens a wa.me link. Client-side validation, clean message formatting, and a proper success state made it feel complete.
 
-Or connect the GitHub repository in the Vercel dashboard — it detects Vite automatically.
+**Custom cursor on touch devices**
+The cursor uses a requestAnimationFrame lerp loop. Had to detect pointer:coarse (phones and tablets) and exit early — otherwise touch devices got a broken invisible element stuck on screen.
 
-### Netlify
+**Intro animation timing**
+Getting the cartoon drop, letter animation, and dissolve to feel snappy without cutting things short. Too fast reads as a glitch. Too slow and users scroll past before it finishes.
 
-```bash
-npx netlify deploy --prod --dir=dist
-```
-
-Or drag the `dist/` folder to [app.netlify.com/drop](https://app.netlify.com/drop).
-
-### Build output
-
-```
-dist/
-├── index.html
-├── assets/
-│   ├── index-[hash].js
-│   └── index-[hash].css
-└── images/
-```
+**Live Open / Closed logic**
+Converting HH:MM strings to minutes, comparing against current time, and mapping getDay() (Sunday = 0) correctly to the timings array index took a few passes to get right.
 
 ---
-
-## Project Structure
-
-```
-vite-project/
-├── public/
-│   ├── favicon.svg
-│   ├── robots.txt
-│   └── images/
-│       ├── doctors/       ← Drop doctor photos here
-│       └── clinic/        ← Drop clinic photos here
-├── src/
-│   ├── assets/svg/
-│   │   ├── sprite.svg              ← All icons as <symbol>
-│   │   └── illustrations/          ← Hero, blobs, divider
-│   ├── components/
-│   │   ├── ui/Icon.tsx             ← Icon component
-│   │   ├── ui/SvgSprite.tsx        ← Sprite injector
-│   │   └── [Section].tsx           ← One file per section
-│   ├── data/clinic.ts              ← ALL content here ← EDIT THIS
-│   ├── lib/seo.ts                  ← JSON-LD helpers
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── index.html                      ← SEO meta tags
-├── tailwind.config.ts              ← Design tokens
-├── vite.config.ts
-└── tsconfig.json
-```
-
----
-
-## Tech Stack
-
-| Tool | Version | Purpose |
-|------|---------|---------|
-| Vite | 5 | Build tool & dev server |
-| React | 18 | UI library |
-| TypeScript | 5 | Type safety |
-| Tailwind CSS | 3 | Utility-first styling |
-| vite-plugin-svgr | 4 | SVG as React components |
-| SVGO | 3 | SVG optimisation |
-
----
-
-## Accessibility
-
-- WCAG AA colour contrast throughout
-- Single `<h1>` (Hero headline)
-- Keyboard navigable (Tab, Enter, Space, ESC)
-- Focus trap in mobile menu
-- ARIA live regions for dynamic content (Open/Closed badge, form errors)
-- Skip-to-main-content link (first focusable element)
-- All images have descriptive `alt` text
-- Decorative SVGs are `aria-hidden="true"`
-
----
-
-## Medical Disclaimer
-
-> This website is for informational purposes only and does not constitute medical advice. Please consult your doctor for diagnosis and treatment.
